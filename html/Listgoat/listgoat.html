@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dashboard - Capril Vilar</title>
+  <title>Cabras - Capril Vilar</title>
   <link rel="stylesheet" href="../../css/global.css" />
-  <link rel="stylesheet" href="./dash.css" />
+  <link rel="stylesheet" href="./list.css" />
 </head>
 <body>
   <div class="container">
@@ -13,8 +13,8 @@
       <h2>🐐 Capril Vilar</h2>
       <nav>
         <ul>
-          <li class="active">Dashboard</li>
-          <li>Cabras</li>
+          <li>Dashboard</li>
+          <li class="active">Cabras</li>
           <li>Eventos</li>
           <li>Proprietários</li>
         </ul>
@@ -22,21 +22,9 @@
     </aside>
     <main class="content">
       <header class="topbar">
-        <h1>Dashboard</h1>
+        <h1>Lista de Cabras</h1>
         <button class="btn-primary">Cadastrar nova cabra</button>
       </header>
-
-      <section class="stats">
-        <div class="card">
-          <h3>Total de Cabras</h3>
-          <p class="value">120</p>
-        </div>
-        <div class="card">
-          <h3>Próximos Eventos</h3>
-          <p class="event">Cobertura (Baruc)</p>
-          <p class="event">Parto (Naide)</p>
-        </div>
-      </section>
 
       <section class="goat-list">
         <div class="goat-header">
@@ -52,13 +40,25 @@
             <p>Data de Nasc: 01/01/2020</p>
           </div>
           <div class="goat-actions">
-            <button disabled class="btn-disabled">Ver detalhes</button>
-            <button disabled class="btn-disabled">Editar</button>
-            <button disabled class="btn-disabled">Excluir</button>
+            <button class="btn-secondary">Ver detalhes</button>
+            <button class="btn-warning">Editar</button>
+            <button class="btn-danger">Excluir</button>
           </div>
         </div>
 
-        <a href="#" class="ver-todas">Ver todas</a>
+        <div class="goat-card">
+          <div class="goat-info">
+            <h3>BARUC</h3>
+            <p>Registro: 1643218012</p>
+            <p>Raça: Alpina</p>
+            <p>Data de Nasc: 27/06/2018</p>
+          </div>
+          <div class="goat-actions">
+            <button class="btn-secondary">Ver detalhes</button>
+            <button class="btn-warning">Editar</button>
+            <button class="btn-danger">Excluir</button>
+          </div>
+        </div>
       </section>
     </main>
   </div>

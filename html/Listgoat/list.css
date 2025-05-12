@@ -56,45 +56,11 @@
   cursor: pointer;
 }
 
-.stats {
-  display: flex;
-  gap: 1.5rem;
-  margin-bottom: 2rem;
-}
-
-.card {
-  background-color: white;
-  padding: 1.2rem 1.5rem;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-  flex: 1;
-}
-
-.card h3 {
-  font-size: 1rem;
-  color: #333;
-  margin-bottom: 0.6rem;
-}
-
-.card .value {
-  font-size: 1.6rem;
-  font-weight: bold;
-}
-
-.card .event {
-  margin: 0.2rem 0;
-  color: #555;
-}
-
 .goat-list {
   background-color: white;
   border-radius: 10px;
   padding: 1.5rem;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-}
-
-.input-goat-search {
-    min-width: 300px;
 }
 
 .goat-header {
@@ -104,15 +70,17 @@
   margin-bottom: 1.5rem;
 }
 
-.goat-header input {
+.input-goat-search {
   padding: 0.5rem 0.8rem;
   border: 1px solid #ccc;
   border-radius: 6px;
+  min-width: 300px;
 }
 
 .goat-card {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   border-bottom: 1px solid #eee;
   padding: 1rem 0;
 }
@@ -127,21 +95,25 @@
 
 .goat-actions button {
   margin-left: 0.5rem;
-}
-
-.btn-disabled {
-  background-color: #e3e8ee;
-  border: none;
   padding: 0.5rem 1rem;
   border-radius: 6px;
-  color: #a0a0a0;
-  cursor: not-allowed;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
 }
 
-.ver-todas {
-  display: inline-block;
-  margin-top: 1rem;
+.btn-secondary {
+  background-color: white;
   color: #1c4b82;
-  font-weight: bold;
-  text-decoration: none;
+  border: 2px solid #1c4b82;
+}
+
+.btn-warning {
+  background-color: #ffc107;
+  color: #000;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: white;
 }
