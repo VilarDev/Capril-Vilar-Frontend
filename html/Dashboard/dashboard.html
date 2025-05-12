@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard - Capril Vilar</title>
+  <link rel="stylesheet" href="../../css/global.css" />
+  <link rel="stylesheet" href="./dash.css" />
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <h2>🐐 Capril Vilar</h2>
+      <nav>
+        <ul>
+          <li class="active">Dashboard</li>
+          <li>Cabras</li>
+          <li>Eventos</li>
+          <li>Proprietários</li>
+        </ul>
+      </nav>
+    </aside>
+    <main class="content">
+      <header class="topbar">
+        <h1>Dashboard</h1>
+        <button class="btn-primary">Cadastrar nova cabra</button>
+      </header>
+
+      <section class="stats">
+        <div class="card">
+          <h3>Total de Cabras</h3>
+          <p class="value">120</p>
+        </div>
+        <div class="card">
+          <h3>Próximos Eventos</h3>
+          <p class="event">Cobertura (Baruc)</p>
+          <p class="event">Parto (Naide)</p>
+        </div>
+      </section>
+
+      <section class="goat-list">
+        <div class="goat-header">
+          <h2>Cabras</h2>
+          <input type="text" placeholder="Buscar por nome" />
+        </div>
+
+        <div class="goat-card">
+          <div class="goat-info">
+            <h3>NAIDE DO CRS</h3>
+            <p>Registro: 2114517012</p>
+            <p>Raça: Boer</p>
+            <p>Data de Nasc: 01/01/2020</p>
+          </div>
+          <div class="goat-actions">
+            <button disabled class="btn-disabled">Ver detalhes</button>
+            <button disabled class="btn-disabled">Editar</button>
+            <button disabled class="btn-disabled">Excluir</button>
+          </div>
+        </div>
+
+        <a href="#" class="ver-todas">Ver todas</a>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
