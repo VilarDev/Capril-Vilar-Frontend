@@ -1,0 +1,61 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Tipografia base */
+html, body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  background-color: #f4f4f8;
+  color: #333;
+  height: 100%;
+}
+
+/* Variáveis de cor (pode usar com pré-processador depois) */
+:root {
+  --primary-color: #3c8dbc;
+  --secondary-color: #2c3e50;
+  --background-color: #ffffff;
+  --input-border: #ccc;
+  --error-color: #e74c3c;
+  --success-color: #2ecc71;
+  --border-radius: 8px;
+}
+
+/* Botões padrão */
+button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: var(--border-radius);
+  background-color: var(--primary-color);
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #367fa9;
+}
+
+/* Links padrão */
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Utilitários */
+.text-center {
+  text-align: center;
+}
+.mt-2 { margin-top: 0.5rem; }
+.mt-4 { margin-top: 1rem; }
+.p-2 { padding: 0.5rem; }
+.p-4 { padding: 1rem; }
