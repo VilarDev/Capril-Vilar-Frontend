@@ -6,6 +6,7 @@
   <title>Dashboard - Capril Vilar</title>
   <link rel="stylesheet" href="../../css/global.css" />
   <link rel="stylesheet" href="./dash.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/treant-js/1.0/Treant.css" />
 </head>
 <body>
   <div class="container">
@@ -52,15 +53,37 @@
             <p>Data de Nasc: 01/01/2020</p>
           </div>
           <div class="goat-actions">
-            <button disabled class="btn-disabled">Ver detalhes</button>
-            <button disabled class="btn-disabled">Editar</button>
-            <button disabled class="btn-disabled">Excluir</button>
+            <button onclick="showGenealogy()" class="btn-primary">🧬 Ver genealogia</button>
+            <button class="btn-disabled">Editar</button>
+            <button class="btn-disabled">Excluir</button>
           </div>
+        </div>
+
+        <div id="goat-details-section" style="display: none; margin-top: 1rem;">
+          <h3>Árvore Genealógica</h3>
+          <div id="genealogy-tree" style="min-width: 720px; margin: 1rem auto;"></div>
+
+          <h3>📅 Eventos</h3>
+          <table style="width: 100%; border-collapse: collapse;">
+            <thead>
+              <tr>
+                <th>Data</th>
+                <th>Tipo</th>
+                <th>Descrição</th>
+              </tr>
+            </thead>
+            <tbody id="event-list"></tbody>
+          </table>
         </div>
 
         <a href="#" class="ver-todas">Ver todas</a>
       </section>
     </main>
   </div>
+
+  <!-- Bibliotecas -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.3.0/raphael.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/treant-js/1.0/Treant.min.js"></script>
+  <script src="../Genealogy/Js/genealogy.js"></script> <!-- ✅ JavaScript separado -->
 </body>
 </html>

@@ -1,0 +1,124 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+  display: flex;
+}
+
+.container {
+  display: flex;
+  max-width: 100%;
+  margin: 20px auto;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  min-width: 1000px; /* Evita encolhimento em telas pequenas */
+}
+
+.sidebar {
+  background-color: #f0f0f0;
+  color: #333;
+  padding: 20px;
+  width: 200px;
+  min-width: 200px;      /* 🔒 Fixar largura mínima */
+  flex-shrink: 0;         /* 🔒 Impede que a sidebar encolha */
+  box-sizing: border-box;
+}
+
+.sidebar h2 {
+  margin-top: 0;
+  color: #1c4b82;
+  margin-bottom: 15px;
+  white-space: nowrap;         /* 🧷 Impede quebra do título */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar nav ul li {
+  margin-bottom: 10px;
+}
+
+.sidebar nav ul li a {
+  display: block;
+  color: #555;
+  text-decoration: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+}
+
+.sidebar nav ul li a:hover {
+  background-color: #e0e0e0;
+  color: #1c4b82;
+}
+
+.sidebar nav ul li.active a {
+  background-color: #1c4b82;
+  color: #fff;
+}
+
+.content {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-x: auto;
+  box-sizing: border-box;
+}
+
+/* Genealogia */
+#genealogy-tree {
+  width: 100%;
+  min-width: 720px;
+  margin: 1rem auto;
+  overflow-x: auto;
+}
+
+/* Nó genealógico refinado */
+.Treant .node {
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  padding: 4px 6px;
+  background: #fff;
+  width: 120px;
+  font-size: 8px;
+  line-height: 1.1;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.Treant .node .name {
+  font-weight: bold;
+  font-size: 9px;
+  margin-bottom: 2px;
+}
+
+.Treant .node .title,
+.Treant .node .desc {
+  font-size: 7px;
+  color: #666;
+  margin: 0;
+}
+
+.Treant .desc {
+  font-style: italic;
+  border-top: 1px solid #eee;
+  padding-top: 2px;
+  margin-top: 2px;
+}
+
+/* Conectores */
+.Treant .connector path,
+.Treant .connector polyline,
+.Treant .line {
+  stroke-width: 0.5px !important;
+  stroke: #bbb !important;
+}

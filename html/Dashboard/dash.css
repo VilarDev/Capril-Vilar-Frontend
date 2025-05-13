@@ -1,42 +1,75 @@
-.container {
+/* Reset e base */
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
   display: flex;
-  min-height: 100vh;
-  background-color: #f4f8fc;
+  height: 100vh;
 }
 
+.container {
+  display: flex;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Sidebar */
 .sidebar {
-  width: 250px;
   background-color: #172a45;
   color: white;
-  padding: 2rem 1.5rem;
+  padding: 20px;
+  width: 250px;
+  min-width: 250px;
+  flex-shrink: 0;
+  box-sizing: border-box;
 }
 
 .sidebar h2 {
-  margin-bottom: 2rem;
+  margin-top: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   font-size: 1.5rem;
+  color: #fff;
+  margin-bottom: 2rem;
 }
 
 .sidebar nav ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
-.sidebar nav li {
-  margin: 1rem 0;
+.sidebar nav ul li {
+  margin-bottom: 10px;
+}
+
+.sidebar nav ul li a,
+.sidebar nav ul li {
+  display: block;
+  color: #bbb;
+  text-decoration: none;
+  padding: 8px 15px;
+  border-radius: 4px;
   cursor: pointer;
-  transition: background 0.3s ease;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
 }
 
-.sidebar nav li.active {
+.sidebar nav ul li.active,
+.sidebar nav ul li:hover {
   background-color: #0f1e32;
+  color: white;
   font-weight: bold;
 }
 
+/* Conteúdo principal */
 .content {
-  flex: 1;
-  padding: 2rem;
+  flex-grow: 1;
+  padding: 20px;
+  overflow-x: auto;
+  box-sizing: border-box;
+  background-color: #f9fafe;
 }
 
 .topbar {
@@ -54,6 +87,16 @@
   border-radius: 6px;
   font-weight: bold;
   cursor: pointer;
+}
+
+.btn-disabled {
+  background-color: #ccc;
+  color: #666;
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 6px;
+  margin-left: 8px;
+  cursor: not-allowed;
 }
 
 .stats {
@@ -94,7 +137,7 @@
 }
 
 .input-goat-search {
-    min-width: 300px;
+  min-width: 300px;
 }
 
 .goat-header {
@@ -129,19 +172,60 @@
   margin-left: 0.5rem;
 }
 
-.btn-disabled {
-  background-color: #e3e8ee;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  color: #a0a0a0;
-  cursor: not-allowed;
-}
-
 .ver-todas {
   display: inline-block;
   margin-top: 1rem;
   color: #1c4b82;
   font-weight: bold;
   text-decoration: none;
+}
+
+/* Genealogia */
+#genealogy-tree {
+  width: 100%;
+  min-width: 720px;
+  margin: 1rem auto;
+  overflow-x: auto;
+}
+
+.Treant .node {
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  padding: 4px 6px;
+  background: #fff;
+  width: 120px;
+  font-size: 8px;
+  line-height: 1.1;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.05);
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.Treant .node .name {
+  font-weight: bold;
+  font-size: 9px;
+  margin-bottom: 2px;
+}
+
+.Treant .node .title,
+.Treant .node .desc {
+  font-size: 7px;
+  color: #666;
+  margin: 0;
+}
+
+.Treant .desc {
+  font-style: italic;
+  border-top: 1px solid #eee;
+  padding-top: 2px;
+  margin-top: 2px;
+}
+
+.Treant .connector path,
+.Treant .connector polyline,
+.Treant .line {
+  stroke-width: 0.5px !important;
+  stroke: #bbb !important;
 }
