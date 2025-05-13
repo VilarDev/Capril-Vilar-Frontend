@@ -1,0 +1,179 @@
+/* Estilo base do layout */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f8fc;
+    color: #172a45;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background-color: #172a45;
+    color: white;
+    padding: 2rem 1.5rem;
+}
+
+.sidebar .logo img {
+    width: 48px; /* Ajuste o tamanho conforme necessário */
+    height: 48px;
+    margin-right: 0.5rem;
+}
+
+.sidebar .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+.sidebar .logo img {
+    width: 32px;
+    height: 32px;
+}
+
+.sidebar .menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar .menu li {
+    margin-bottom: 1rem;
+}
+
+.sidebar .menu li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: block;
+    border-radius: 6px;
+    transition: background 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* Espaçamento para o ícone */
+}
+
+.sidebar .menu li.active a,
+.sidebar .menu li a:hover {
+    background-color: #0f1e32;
+}
+
+/* Área de conteúdo */
+.content {
+    flex: 1;
+    padding: 2rem;
+}
+
+/* Cabeçalho da página */
+.header {
+    margin-bottom: 2rem;
+}
+
+.header h1 {
+    font-size: 2rem;
+    color: #172a45; /* Cor do texto do cabeçalho */
+}
+
+/* Formulário */
+.form-cadastro {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    max-width: 800px;
+}
+
+.form-cadastro h2 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #1c4b82;
+    font-size: 1.5rem;
+}
+
+/* Grids */
+.row {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+}
+
+.col {
+    flex: 1;
+    min-width: 280px;
+}
+
+/* Campos de formulário */
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    color: #172a45; /* Cor da label */
+}
+
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group input[type="number"],
+.form-group select {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    background-color: #fdfdfd;
+    color: #172a45; /* Cor do texto do input */
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #1c4b82;
+    box-shadow: 0 0 0 2px rgba(28, 75, 130, 0.2);
+}
+
+/* Botão */
+.btn-salvar {
+    margin-top: 2rem;
+    background-color: #1c4b82;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn-salvar:hover {
+    background-color: #163a66;
+}
+
+/* Estilos para os ícones (você precisará de uma biblioteca de ícones) */
+/* Exemplo básico para placeholders de ícones */
+.icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    margin-right: 0.5rem;
+    vertical-align: middle;
+    /* Adicione estilos para sua biblioteca de ícones aqui */
+}
+
+/* Se estiver usando caracteres Unicode como placeholder */
+.icon.home::before { content: "🏠"; }
+.icon.cabras::before { content: "🐐"; }
+.icon.eventos::before { content: "🗓️"; }
+.icon.proprietarios::before { content: "👤"; }

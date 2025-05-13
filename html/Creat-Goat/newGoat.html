@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Nova Cabra</title>
+    <link rel="stylesheet" href="../../css/global.css">
+    <link rel="stylesheet" href="./new.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="../assets/Images/logo_capril_vilar.jpg" alt="Logo Capril Vilar">
+                <span>Capril Vilar</span>
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li><a href="#"><i class="icon home"></i> Dashboard</a></li>
+                    <li class="active"><a href="#"><i class="icon cabras"></i> Cabras</a></li>
+                    <li><a href="#"><i class="icon eventos"></i> Eventos</a></li>
+                    <li><a href="#"><i class="icon proprietarios"></i> Proprietários</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="content">
+            <header class="header">
+                <h1>Cadastrar Nova Cabra</h1>
+            </header>
+            <form class="form-cadastro" id="cadastroCabraForm">
+                <h2>Dados da Cabra</h2>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="name">Nome da Cabra</label>
+                            <input type="text" id="name" name="name" placeholder="Ex: XERIFE V">
+                        </div>
+                        <div class="form-group">
+                            <label for="registrationNumber">Número de Registro</label>
+                            <input type="text" id="registrationNumber" name="registrationNumber" placeholder="Ex: 1643218022">
+                        </div>
+                        <div class="form-group">
+                            <label for="color">Cor</label>
+                            <input type="text" id="color" name="color" placeholder="Ex: CHAMOISÉE">
+                        </div>
+                        <div class="form-group">
+                            <label for="birthDate">Data de Nascimento</label>
+                            <input type="date" id="birthDate" name="birthDate">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="gender">Sexo</label>
+                            <select id="gender" name="gender">
+                                <option value="">Selecione</option>
+                                <option value="MALE">Macho</option>
+                                <option value="FEMALE">Fêmea</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="status">Status</label>
+                            <select id="status" name="status">
+                                <option value="">Selecione</option>
+                                <option value="ATIVO">Ativo</option>
+                                <option value="INATIVO">Inativo</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="category">Categoria</label>
+                            <input type="text" id="category" name="category" placeholder="Ex: PO">
+                        </div>
+                        <div class="form-group">
+                            <label for="farmId">ID da Fazenda</label>
+                            <input type="number" id="farmId" name="farmId" placeholder="Ex: 2">
+                        </div>
+                    </div>
+                </div>
+
+                <h2>Genealogia</h2>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="fatherRegistrationNumber">Número de Registro do Pai</label>
+                            <input type="text" id="fatherRegistrationNumber" name="fatherRegistrationNumber" placeholder="Ex: 1635717065">
+                        </div>
+                        <div class="form-group">
+                            <label for="tod">TOD (Tatuagem Orelha Direita)</label>
+                            <input type="text" id="tod" name="tod" placeholder="Ex: 16432">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="motherRegistrationNumber">Número de Registro da Mãe</label>
+                            <input type="text" id="motherRegistrationNumber" name="motherRegistrationNumber" placeholder="Ex: 2114517012">
+                        </div>
+                        <div class="form-group">
+                            <label for="toe">TOE (Tatuagem Orelha Esquerda)</label>
+                            <input type="text" id="toe" name="toe" placeholder="Ex: 18013">
+                        </div>
+                    </div>
+                </div>
+
+                <h2>Informações Adicionais</h2>
+                <div class="form-group">
+                    <label for="breed">Raça</label>
+                    <select id="breed" name="breed">
+                        <option value="">Selecione</option>
+                        <option value="ALPINE">ALPINE</option>
+                        <option value="ANGLO_NUBIANA">ANGLO NUBIANA</option>
+                        <option value="BOER">BOER</option>
+                        <option value="MESTIÇA">MESTIÇA</option>
+                        <option value="MURCIANA_GRANADINA">MURCIANA GRANADINA</option>
+                        <option value="SAANEN">SAANEN</option>
+                        <option value="TOGGENBURG">TOGGENBURG</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="ownerId">ID do Proprietário</label>
+                    <input type="number" id="ownerId" name="ownerId" placeholder="Ex: 2">
+                </div>
+
+                <button type="submit" class="btn-salvar">Cadastrar</button>
+            </form>
+        </main>
+    </div>
+</body>
+</html>
