@@ -140,6 +140,19 @@ body {
   min-width: 300px;
 }
 
+.search-wrapper {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+#search-input {
+  padding: 0.5rem 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  min-width: 250px;
+}
+
 .goat-header {
   display: flex;
   justify-content: space-between;
@@ -147,29 +160,63 @@ body {
   margin-bottom: 1.5rem;
 }
 
-.goat-header input {
-  padding: 0.5rem 0.8rem;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-}
-
 .goat-card {
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid #eee;
-  padding: 1rem 0;
+  gap: 2rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
 }
 
-.goat-card:last-child {
-  border-bottom: none;
+.goat-info {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  flex: 1;
+  min-width: 300px;
 }
 
 .goat-info h3 {
-  margin-bottom: 0.4rem;
+  font-size: 1.5rem;
+  margin-bottom: 0.8rem;
+  color: #1c4b82;
+}
+
+.goat-info p {
+  margin: 4px 0;
+  font-size: 0.95rem;
+}
+
+.goat-info strong {
+  color: #1c4b82;
+  font-weight: 600;
+}
+
+.goat-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 150px;
 }
 
 .goat-actions button {
-  margin-left: 0.5rem;
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.goat-actions .btn-primary {
+  background-color: #1c4b82;
+  color: #fff;
+}
+
+.goat-actions .btn-disabled {
+  background-color: #e0e0e0;
+  color: #888;
+  cursor: not-allowed;
 }
 
 .ver-todas {
@@ -225,7 +272,7 @@ body {
 
 .Treant .connector path,
 .Treant .connector polyline,
-.Treant .line {
+.Treant .connector .line {
   stroke-width: 0.5px !important;
   stroke: #bbb !important;
 }

@@ -1,89 +1,103 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dashboard - Capril Vilar</title>
-  <link rel="stylesheet" href="../../css/global.css" />
-  <link rel="stylesheet" href="./dash.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/treant-js/1.0/Treant.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - Capril Vilar</title>
+    <link rel="stylesheet" href="../../css/global.css" />
+    <link rel="stylesheet" href="./dash.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/treant-js/1.0/Treant.css" />
 </head>
 <body>
-  <div class="container">
-    <aside class="sidebar">
-      <h2>🐐 Capril Vilar</h2>
-      <nav>
-        <ul>
-          <li class="active">Dashboard</li>
-          <li>Cabras</li>
-          <li>Eventos</li>
-          <li>Proprietários</li>
-        </ul>
-      </nav>
-    </aside>
-    <main class="content">
-      <header class="topbar">
-        <h1>Dashboard</h1>
-        <button class="btn-primary">Cadastrar nova cabra</button>
-      </header>
+    <div class="container">
+        <aside class="sidebar">
+            <h2>🐐 Capril Vilar</h2>
+            <nav>
+                <ul>
+                    <li class="active">Dashboard</li>
+                    <li>Cabras</li>
+                    <li>Eventos</li>
+                    <li>Proprietários</li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="content">
+            <header class="topbar">
+                <h1>Dashboard</h1>
+                <button class="btn-primary">Cadastrar nova cabra</button>
+            </header>
 
-      <section class="stats">
-        <div class="card">
-          <h3>Total de Cabras</h3>
-          <p class="value">120</p>
-        </div>
-        <div class="card">
-          <h3>Próximos Eventos</h3>
-          <p class="event">Cobertura (Baruc)</p>
-          <p class="event">Parto (Naide)</p>
-        </div>
-      </section>
+            <section class="stats">
+                <div class="card">
+                    <h3>Total de Cabras</h3>
+                    <p class="value">120</p>
+                </div>
+                <div class="card">
+                    <h3>Próximos Eventos</h3>
+                    <p class="event">Cobertura (Baruc)</p>
+                    <p class="event">Parto (Naide)</p>
+                </div>
+            </section>
 
-      <section class="goat-list">
-        <div class="goat-header">
-          <h2>Cabras</h2>
-          <input type="text" placeholder="Buscar por nome" class="input-goat-search"/>
-        </div>
+            <section class="goat-list">
+                <div class="goat-header">
+                    <h2>Cabras</h2>
+                    <div class="search-wrapper">
+                        <input type="text" id="search-input" placeholder="Digite o registro da cabra" class="input-goat-search" />
+                        <button id="search-button" class="btn-primary">🔍</button>
+                    </div>
+                </div>
 
-        <div class="goat-card">
-          <div class="goat-info">
-            <h3>NAIDE DO CRS</h3>
-            <p>Registro: 2114517012</p>
-            <p>Raça: Boer</p>
-            <p>Data de Nasc: 01/01/2020</p>
-          </div>
-          <div class="goat-actions">
-            <button onclick="showGenealogy()" class="btn-primary">🧬 Ver genealogia</button>
-            <button class="btn-disabled">Editar</button>
-            <button class="btn-disabled">Excluir</button>
-          </div>
-        </div>
+                <div class="goat-card" style="display: none;">
+                    <div class="goat-info">
+                        <h3 id="goat-name">Nome da cabra</h3>
+                        <p><strong>Registro:</strong> <span id="registration-number"></span></p>
+                        <p><strong>Sexo:</strong> <span id="gender"></span></p>
+                        <p><strong>Raça:</strong> <span id="breed"></span></p>
+                        <p><strong>Pelagem:</strong> <span id="color"></span></p>
+                        <p><strong>Data de Nascimento:</strong> <span id="birth-date"></span></p>
+                        <p><strong>Status:</strong> <span id="status"></span></p>
+                        <p><strong>Categoria:</strong> <span id="category"></span></p>
+                        <p><strong>TOD:</strong> <span id="tod"></span></p>
+                        <p><strong>TOE:</strong> <span id="toe"></span></p>
+                        <p><strong>Pai:</strong> <span id="father-name"></span> — <span id="father-reg"></span></p>
+                        <p><strong>Mãe:</strong> <span id="mother-name"></span> — <span id="mother-reg"></span></p>
+                        <p><strong>Proprietário:</strong> <span id="owner-name"></span></p>
+                        <p><strong>Fazenda:</strong> <span id="farm-name"></span></p>
+                    </div>
+                    <div class="goat-actions">
+                        <button onclick="showGenealogy()" class="btn-primary">🧬 Ver genealogia</button>
+                        <button class="btn-disabled">Editar</button>
+                        <button class="btn-disabled">Excluir</button>
+                    </div>
+                </div>
 
-        <div id="goat-details-section" style="display: none; margin-top: 1rem;">
-          <h3>Árvore Genealógica</h3>
-          <div id="genealogy-tree" style="min-width: 720px; margin: 1rem auto;"></div>
+                <div id="goat-details-section" style="display: none; margin-top: 1rem;">
+                    <h3>Árvore Genealógica</h3>
+                    <div id="genealogy-tree" style="min-width: 720px; margin: 1rem auto;"></div>
 
-          <h3>📅 Eventos</h3>
-          <table style="width: 100%; border-collapse: collapse;">
-            <thead>
-              <tr>
-                <th>Data</th>
-                <th>Tipo</th>
-                <th>Descrição</th>
-              </tr>
-            </thead>
-            <tbody id="event-list"></tbody>
-          </table>
-        </div>
+                    <h3>📅 Eventos</h3>
+                    <table style="width: 100%; border-collapse: collapse;">
+                        <thead>
+                            <tr>
+                                <th>Data</th>
+                                <th>Tipo</th>
+                                <th>Descrição</th>
+                            </tr>
+                        </thead>
+                        <tbody id="event-list"></tbody>
+                    </table>
+                </div>
 
-        <a href="#" class="ver-todas">Ver todas</a>
-      </section>
-    </main>
-  </div>
+                <a href="#" class="ver-todas">Ver todas</a>
+            </section>
+        </main>
+    </div>
 
-  <!-- Bibliotecas -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.3.0/raphael.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/treant-js/1.0/Treant.min.js"></script>
-  <script src="../Genealogy/Js/genealogy.js"></script> <!-- ✅ JavaScript separado -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.3.0/raphael.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/treant-js/1.0/Treant.min.js"></script>
+    <script src="./JS/dash.js"></script>
+    <script src=".././Genealogy/Js/genealogy.js"></script>
+    
 </body>
 </html>
