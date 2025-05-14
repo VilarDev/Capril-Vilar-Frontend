@@ -1,4 +1,4 @@
-/* Reset e base */
+/* ========================= Base Reset ========================= */
 body {
   font-family: sans-serif;
   margin: 0;
@@ -15,7 +15,7 @@ body {
   max-width: 100%;
 }
 
-/* Sidebar */
+/* ========================= Sidebar ========================= */
 .sidebar {
   background-color: #172a45;
   color: white;
@@ -28,12 +28,12 @@ body {
 
 .sidebar h2 {
   margin-top: 0;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: #fff;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  font-size: 1.5rem;
-  color: #fff;
-  margin-bottom: 2rem;
 }
 
 .sidebar nav ul {
@@ -63,15 +63,7 @@ body {
   font-weight: bold;
 }
 
-/* Conteúdo principal */
-.content {
-  flex-grow: 1;
-  padding: 20px;
-  overflow-x: auto;
-  box-sizing: border-box;
-  background-color: #f9fafe;
-}
-
+/* ========================= Top Bar ========================= */
 .topbar {
   display: flex;
   justify-content: space-between;
@@ -79,6 +71,7 @@ body {
   margin-bottom: 2rem;
 }
 
+/* ========================= Buttons ========================= */
 .btn-primary {
   background-color: #1c4b82;
   color: white;
@@ -99,6 +92,7 @@ body {
   cursor: not-allowed;
 }
 
+/* ========================= Stats Cards ========================= */
 .stats {
   display: flex;
   gap: 1.5rem;
@@ -129,6 +123,7 @@ body {
   color: #555;
 }
 
+/* ========================= Goat List Section ========================= */
 .goat-list {
   background-color: white;
   border-radius: 10px;
@@ -136,8 +131,11 @@ body {
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
 
-.input-goat-search {
-  min-width: 300px;
+.goat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
 }
 
 .search-wrapper {
@@ -153,13 +151,11 @@ body {
   min-width: 250px;
 }
 
-.goat-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1.5rem;
+.input-goat-search {
+  min-width: 300px;
 }
 
+/* ========================= Goat Card ========================= */
 .goat-card {
   display: flex;
   justify-content: space-between;
@@ -174,7 +170,8 @@ body {
   padding: 1.5rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   flex: 1;
-  min-width: 300px;
+  max-width: 720px;
+  min-width: 600px;
 }
 
 .goat-info h3 {
@@ -208,26 +205,7 @@ body {
   cursor: pointer;
 }
 
-.goat-actions .btn-primary {
-  background-color: #1c4b82;
-  color: #fff;
-}
-
-.goat-actions .btn-disabled {
-  background-color: #e0e0e0;
-  color: #888;
-  cursor: not-allowed;
-}
-
-.ver-todas {
-  display: inline-block;
-  margin-top: 1rem;
-  color: #1c4b82;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-/* Genealogia */
+/* ========================= Genealogy Tree ========================= */
 #genealogy-tree {
   width: 100%;
   min-width: 720px;
@@ -276,3 +254,68 @@ body {
   stroke-width: 0.5px !important;
   stroke: #bbb !important;
 }
+
+/* ========================= Event Section ========================= */
+#event-section {
+  display: none;
+  margin-top: 2rem;
+}
+
+#event-section h3 {
+  margin-bottom: 1rem;
+  color: #1c4b82;
+}
+
+.event-filters {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.event-filters select,
+.event-filters input {
+  padding: 0.4rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* ========================= Event Table ========================= */
+#event-list {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+#event-list tr:nth-child(even) {
+  background-color: #f0f4f8;
+}
+
+#event-list td,
+#event-list th {
+  padding: 0.6rem;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+  vertical-align: top;
+  word-break: break-word;
+  max-width: 180px;
+}
+
+/* ========================= Misc ========================= */
+.ver-todas {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #1c4b82;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.content {
+  flex-grow: 1;
+  padding: 20px;
+  margin-left: 20px; /* <<< espaço entre a sidebar e o conteúdo principal */
+  overflow-x: auto;
+  box-sizing: border-box;
+  background-color: #f9fafe;
+}
+

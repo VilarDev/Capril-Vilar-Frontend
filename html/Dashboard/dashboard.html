@@ -1,103 +1,131 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard - Capril Vilar</title>
-    <link rel="stylesheet" href="../../css/global.css" />
-    <link rel="stylesheet" href="./dash.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/treant-js/1.0/Treant.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard - Capril Vilar</title>
+  <link rel="stylesheet" href="../../css/global.css" />
+  <link rel="stylesheet" href="./dash.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/treant-js/1.0/Treant.css" />
 </head>
 <body>
-    <div class="container">
-        <aside class="sidebar">
-            <h2>🐐 Capril Vilar</h2>
-            <nav>
-                <ul>
-                    <li class="active">Dashboard</li>
-                    <li>Cabras</li>
-                    <li>Eventos</li>
-                    <li>Proprietários</li>
-                </ul>
-            </nav>
-        </aside>
-        <main class="content">
-            <header class="topbar">
-                <h1>Dashboard</h1>
-                <button class="btn-primary">Cadastrar nova cabra</button>
-            </header>
+  <div class="container">
+    <aside class="sidebar">
+      <h2>🐐 Capril Vilar</h2>
+      <nav>
+        <ul>
+          <li class="active">Dashboard</li>
+          <li>Cabras</li>
+          <li>Eventos</li>
+          <li>Proprietários</li>
+        </ul>
+      </nav>
+    </aside>
+    <main class="content">
+      <header class="topbar">
+        <h1>Dashboard</h1>
+        <button class="btn-primary">Cadastrar nova cabra</button>
+      </header>
 
-            <section class="stats">
-                <div class="card">
-                    <h3>Total de Cabras</h3>
-                    <p class="value">120</p>
-                </div>
-                <div class="card">
-                    <h3>Próximos Eventos</h3>
-                    <p class="event">Cobertura (Baruc)</p>
-                    <p class="event">Parto (Naide)</p>
-                </div>
-            </section>
+      <section class="stats">
+        <div class="card">
+          <h3>Total de Cabras</h3>
+          <p class="value">120</p>
+        </div>
+        <div class="card">
+          <h3>Próximos Eventos</h3>
+          <p class="event">Cobertura (Baruc)</p>
+          <p class="event">Parto (Naide)</p>
+        </div>
+      </section>
 
-            <section class="goat-list">
-                <div class="goat-header">
-                    <h2>Cabras</h2>
-                    <div class="search-wrapper">
-                        <input type="text" id="search-input" placeholder="Digite o registro da cabra" class="input-goat-search" />
-                        <button id="search-button" class="btn-primary">🔍</button>
-                    </div>
-                </div>
+      <section class="goat-list">
+        <div class="goat-header">
+          <h2>Cabras</h2>
+          <div class="search-wrapper">
+            <input type="text" id="search-input" placeholder="Digite o registro da cabra" class="input-goat-search" />
+            <button id="search-button" class="btn-primary">🔍</button>
+          </div>
+        </div>
 
-                <div class="goat-card" style="display: none;">
-                    <div class="goat-info">
-                        <h3 id="goat-name">Nome da cabra</h3>
-                        <p><strong>Registro:</strong> <span id="registration-number"></span></p>
-                        <p><strong>Sexo:</strong> <span id="gender"></span></p>
-                        <p><strong>Raça:</strong> <span id="breed"></span></p>
-                        <p><strong>Pelagem:</strong> <span id="color"></span></p>
-                        <p><strong>Data de Nascimento:</strong> <span id="birth-date"></span></p>
-                        <p><strong>Status:</strong> <span id="status"></span></p>
-                        <p><strong>Categoria:</strong> <span id="category"></span></p>
-                        <p><strong>TOD:</strong> <span id="tod"></span></p>
-                        <p><strong>TOE:</strong> <span id="toe"></span></p>
-                        <p><strong>Pai:</strong> <span id="father-name"></span> — <span id="father-reg"></span></p>
-                        <p><strong>Mãe:</strong> <span id="mother-name"></span> — <span id="mother-reg"></span></p>
-                        <p><strong>Proprietário:</strong> <span id="owner-name"></span></p>
-                        <p><strong>Fazenda:</strong> <span id="farm-name"></span></p>
-                    </div>
-                    <div class="goat-actions">
-                        <button onclick="showGenealogy()" class="btn-primary">🧬 Ver genealogia</button>
-                        <button class="btn-disabled">Editar</button>
-                        <button class="btn-disabled">Excluir</button>
-                    </div>
-                </div>
+        <div class="goat-card" style="display: none;">
+          <div class="goat-info">
+            <h3 id="goat-name">Nome da cabra</h3>
+            <p><strong>Registro:</strong> <span id="registration-number"></span></p>
+            <p><strong>Sexo:</strong> <span id="gender"></span></p>
+            <p><strong>Raça:</strong> <span id="breed"></span></p>
+            <p><strong>Pelagem:</strong> <span id="color"></span></p>
+            <p><strong>Data de Nascimento:</strong> <span id="birth-date"></span></p>
+            <p><strong>Status:</strong> <span id="status"></span></p>
+            <p><strong>Categoria:</strong> <span id="category"></span></p>
+            <p><strong>TOD:</strong> <span id="tod"></span></p>
+            <p><strong>TOE:</strong> <span id="toe"></span></p>
+            <p><strong>Pai:</strong> <span id="father-name"></span> — <span id="father-reg"></span></p>
+            <p><strong>Mãe:</strong> <span id="mother-name"></span> — <span id="mother-reg"></span></p>
+            <p><strong>Proprietário:</strong> <span id="owner-name"></span></p>
+            <p><strong>Fazenda:</strong> <span id="farm-name"></span></p>
+          </div>
+          <div class="goat-actions">
+            <button onclick="showGenealogy()" class="btn-primary">🧬 Ver genealogia</button>
+            <button onclick="toggleEvents()" class="btn-primary">🗓️ Ver eventos</button>
+            <button class="btn-disabled">Editar</button>
+            <button class="btn-disabled">Excluir</button>
+          </div>
+        </div>
 
-                <div id="goat-details-section" style="display: none; margin-top: 1rem;">
-                    <h3>Árvore Genealógica</h3>
-                    <div id="genealogy-tree" style="min-width: 720px; margin: 1rem auto;"></div>
+        <div id="goat-details-section" style="display: none; margin-top: 1rem;">
+          <!-- Genealogia -->
+          <div id="genealogy-section" style="display: none;">
+            <h3>🧬 Árvore Genealógica</h3>
+            <div id="genealogy-tree" style="min-width: 720px; margin: 1rem auto;"></div>
+          </div>
 
-                    <h3>📅 Eventos</h3>
-                    <table style="width: 100%; border-collapse: collapse;">
-                        <thead>
-                            <tr>
-                                <th>Data</th>
-                                <th>Tipo</th>
-                                <th>Descrição</th>
-                            </tr>
-                        </thead>
-                        <tbody id="event-list"></tbody>
-                    </table>
-                </div>
+          <!-- Eventos -->
+          <div id="event-section" style="display: none;">
+            <h3>🗓️ Eventos da Cabra</h3>
+            <div class="event-filters" style="margin-bottom: 1rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+              <select id="filter-event-type">
+                <option value="">Todos os tipos</option>
+                <option value="COBERTURA">Cobertura</option>
+                <option value="PARTO">Parto</option>
+                <option value="MORTE">Morte</option>
+                <option value="SAUDE">Saúde</option>
+                <option value="VACINACAO">Vacinação</option>
+                <option value="TRANSFERENCIA">Transferência</option>
+                <option value="MUDANCA_PROPRIETARIO">Mudança de Proprietário</option>
+                <option value="PESAGEM">Pesagem</option>
+                <option value="OUTRO">Outro</option>
+              </select>
+              <input type="date" id="filter-start-date" />
+              <input type="date" id="filter-end-date" />
+              <button id="filter-search-button" class="btn-primary">Filtrar</button>
+            </div>
 
-                <a href="#" class="ver-todas">Ver todas</a>
-            </section>
-        </main>
-    </div>
+            <table style="width: 100%; border-collapse: collapse;">
+              <thead>
+                <tr>
+                  <th>Data</th>
+                  <th>Tipo</th>
+                  <th>Descrição</th>
+                  <th>Local</th>
+                  <th>Veterinário</th>
+                  <th>Resultado</th>
+                </tr>
+              </thead>
+              <tbody id="event-list"></tbody>
+            </table>
+          </div>
+        </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.3.0/raphael.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/treant-js/1.0/Treant.min.js"></script>
-    <script src="./JS/dash.js"></script>
-    <script src=".././Genealogy/Js/genealogy.js"></script>
-    
+        <a href="#" class="ver-todas">Ver todas</a>
+      </section>
+    </main>
+  </div>
+
+  <!-- Bibliotecas -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.3.0/raphael.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/treant-js/1.0/Treant.min.js"></script>
+  <script src="./JS/dash.js"></script>
+  <script src=".././Genealogy/Js/genealogy.js"></script>
 </body>
 </html>

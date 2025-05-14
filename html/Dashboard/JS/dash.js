@@ -1,19 +1,13 @@
+let currentGoatRegistration = null;
+
 // Busca dados da cabra pelo número de registro digitado
 async function fetchGoatData(registrationNumber) {
-    console.log("Fazendo fetch para:", registrationNumber);
     try {
         const response = await fetch(`http://127.0.0.1:8080/goats/${registrationNumber}`);
-        console.log("Status da resposta:", response.status);
-        if (!response.ok) {
-            const errorBody = await response.text();
-            console.error("Erro na resposta do servidor:", response.status, errorBody);
-            alert(`Cabra não encontrada (Status: ${response.status})`);
-            document.querySelector(".goat-card").style.display = "none";
-            return;
-        }
+        if (!response.ok) throw new Error("Cabra não encontrada");
 
         const goat = await response.json();
-        console.log("Dados da cabra recebidos:", goat);
+        currentGoatRegistration = goat.registrationNumber;
 
         document.getElementById("goat-name").textContent = goat.name;
         document.getElementById("registration-number").textContent = goat.registrationNumber;
@@ -33,6 +27,7 @@ async function fetchGoatData(registrationNumber) {
         document.getElementById("farm-name").textContent = goat.farmName;
 
         document.querySelector(".goat-card").style.display = "flex";
+        document.getElementById("goat-details-section").style.display = "none";
     } catch (error) {
         console.error("Erro ao buscar cabra:", error);
         alert("Cabra não encontrada ou erro de conexão.");
@@ -40,23 +35,94 @@ async function fetchGoatData(registrationNumber) {
     }
 }
 
-// Inicialização da página
+// Exibe a árvore genealógica
+function showGenealogy() {
+    document.getElementById("goat-details-section").style.display = "block";
+    document.getElementById("genealogy-section").style.display = "block";
+    document.getElementById("event-section").style.display = "none";
+    if (currentGoatRegistration) {
+        loadGenealogy(currentGoatRegistration);
+    }
+}
+
+// Exibe a seção de eventos
+function toggleEvents() {
+    document.getElementById("goat-details-section").style.display = "block";
+    document.getElementById("genealogy-section").style.display = "none";
+    document.getElementById("event-section").style.display = "block";
+    if (currentGoatRegistration) {
+        loadEvents(currentGoatRegistration);
+    }
+}
+
+// Carrega eventos da cabra com filtros opcionais
+async function loadEvents(registrationNumber) {
+    const type = document.getElementById("filter-event-type").value;
+    const startDate = document.getElementById("filter-start-date").value;
+    const endDate = document.getElementById("filter-end-date").value;
+
+    let url = `http://127.0.0.1:8080/goats/${registrationNumber}/events`;
+    const params = new URLSearchParams();
+
+    if (type) params.append("eventType", type);
+    if (startDate) params.append("startDate", startDate);
+    if (endDate) params.append("endDate", endDate);
+
+    if (params.toString()) {
+        url += `?${params.toString()}`;
+    }
+
+    try {
+        const response = await fetch(url);
+        if (!response.ok) throw new Error("Erro ao buscar eventos");
+
+        const data = await response.json();
+        const events = data.content || [];
+
+        const tbody = document.getElementById("event-list");
+        tbody.innerHTML = "";
+
+        if (events.length === 0) {
+            tbody.innerHTML = `<tr><td colspan="6">Nenhum evento encontrado.</td></tr>`;
+            return;
+        }
+
+        events.forEach(ev => {
+            const tr = document.createElement("tr");
+            tr.innerHTML = `
+                <td>${ev.date}</td>
+                <td>${ev.eventType}</td>
+                <td>${ev.description}</td>
+                <td>${ev.location || '-'}</td>
+                <td>${ev.veterinarian || '-'}</td>
+                <td>${ev.outcome || '-'}</td>
+            `;
+            tbody.appendChild(tr);
+        });
+    } catch (error) {
+        console.error("Erro ao carregar eventos:", error);
+        alert("Não foi possível carregar os eventos.");
+    }
+}
+
+// Inicializa os listeners
 window.onload = () => {
     document.querySelector(".goat-card").style.display = "none";
 
-    // Ação ao clicar no botão 🔍
     document.getElementById("search-button").addEventListener("click", () => {
         const reg = document.getElementById("search-input").value.trim();
-        console.log("Buscando registro:", reg);
-        if (reg) {
-            fetchGoatData(reg);
-        }
+        if (reg) fetchGoatData(reg);
     });
 
-    // Ação ao pressionar Enter no campo
     document.getElementById("search-input").addEventListener("keyup", (event) => {
         if (event.key === "Enter") {
             document.getElementById("search-button").click();
+        }
+    });
+
+    document.getElementById("filter-search-button")?.addEventListener("click", () => {
+        if (currentGoatRegistration) {
+            loadEvents(currentGoatRegistration);
         }
     });
 };
