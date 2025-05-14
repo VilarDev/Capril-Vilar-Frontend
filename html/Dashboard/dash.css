@@ -319,3 +319,43 @@ body {
   background-color: #f9fafe;
 }
 
+/* ========================= Add Event Form ========================= */
+.event-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 600px;
+  background: #ffffff;
+  padding: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.event-form .form-row {
+  display: flex;
+  flex-direction: column;
+}
+
+.event-form label {
+  font-weight: bold;
+  margin-bottom: 4px;
+  color: #1c4b82;
+}
+
+.event-form input,
+.event-form select,
+.event-form textarea {
+  padding: 0.6rem;
+  font-size: 0.95rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: inherit;
+  background-color: #fff;
+}
+
+.event-form textarea {
+  resize: vertical;
+  min-height: 100px;
+  max-height: 200px;
+}

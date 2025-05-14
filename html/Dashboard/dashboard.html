@@ -1,3 +1,4 @@
+<!-- HTML COMPLETO COM FORMULÁRIO DE ADICIONAR EVENTO REESTRUTURADO -->
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -26,18 +27,6 @@
         <h1>Dashboard</h1>
         <button class="btn-primary">Cadastrar nova cabra</button>
       </header>
-
-      <section class="stats">
-        <div class="card">
-          <h3>Total de Cabras</h3>
-          <p class="value">120</p>
-        </div>
-        <div class="card">
-          <h3>Próximos Eventos</h3>
-          <p class="event">Cobertura (Baruc)</p>
-          <p class="event">Parto (Naide)</p>
-        </div>
-      </section>
 
       <section class="goat-list">
         <div class="goat-header">
@@ -68,6 +57,7 @@
           <div class="goat-actions">
             <button onclick="showGenealogy()" class="btn-primary">🧬 Ver genealogia</button>
             <button onclick="toggleEvents()" class="btn-primary">🗓️ Ver eventos</button>
+            <button onclick="toggleAddEvent()" class="btn-primary">➕ Adicionar evento</button>
             <button class="btn-disabled">Editar</button>
             <button class="btn-disabled">Excluir</button>
           </div>
@@ -77,13 +67,13 @@
           <!-- Genealogia -->
           <div id="genealogy-section" style="display: none;">
             <h3>🧬 Árvore Genealógica</h3>
-            <div id="genealogy-tree" style="min-width: 720px; margin: 1rem auto;"></div>
+            <div id="genealogy-tree"></div>
           </div>
 
           <!-- Eventos -->
           <div id="event-section" style="display: none;">
             <h3>🗓️ Eventos da Cabra</h3>
-            <div class="event-filters" style="margin-bottom: 1rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+            <div class="event-filters">
               <select id="filter-event-type">
                 <option value="">Todos os tipos</option>
                 <option value="COBERTURA">Cobertura</option>
@@ -101,7 +91,7 @@
               <button id="filter-search-button" class="btn-primary">Filtrar</button>
             </div>
 
-            <table style="width: 100%; border-collapse: collapse;">
+            <table>
               <thead>
                 <tr>
                   <th>Data</th>
@@ -115,6 +105,49 @@
               <tbody id="event-list"></tbody>
             </table>
           </div>
+
+          <!-- Formulário de Adicionar Evento -->
+          <div id="add-event-section" style="display: none; margin-top: 2rem;">
+            <h3>➕ Adicionar Evento</h3>
+            <form id="event-form" class="event-form">
+              <div class="form-row">
+                <label for="event-type">Tipo do Evento</label>
+                <select id="event-type" required>
+                  <option value="">Selecione o tipo</option>
+                  <option value="COBERTURA">Cobertura</option>
+                  <option value="PARTO">Parto</option>
+                  <option value="MORTE">Morte</option>
+                  <option value="SAUDE">Saúde</option>
+                  <option value="VACINACAO">Vacinação</option>
+                  <option value="TRANSFERENCIA">Transferência</option>
+                  <option value="MUDANCA_PROPRIETARIO">Mudança de Proprietário</option>
+                  <option value="PESAGEM">Pesagem</option>
+                  <option value="OUTRO">Outro</option>
+                </select>
+              </div>
+              <div class="form-row">
+                <label for="event-date">Data</label>
+                <input type="date" id="event-date" required />
+              </div>
+              <div class="form-row">
+                <label for="event-description">Descrição</label>
+                <input type="text" id="event-description" required />
+              </div>
+              <div class="form-row">
+                <label for="event-location">Local</label>
+                <input type="text" id="event-location" />
+              </div>
+              <div class="form-row">
+                <label for="event-vet">Veterinário</label>
+                <input type="text" id="event-vet" />
+              </div>
+              <div class="form-row">
+                <label for="event-outcome">Resultado / Relato</label>
+                <textarea id="event-outcome" rows="4" placeholder="Resultado ou relato do evento"></textarea>
+              </div>
+              <button type="submit" class="btn-primary">Salvar Evento</button>
+            </form>
+          </div>
         </div>
 
         <a href="#" class="ver-todas">Ver todas</a>
@@ -126,6 +159,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.3.0/raphael.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/treant-js/1.0/Treant.min.js"></script>
   <script src="./JS/dash.js"></script>
-  <script src=".././Genealogy/Js/genealogy.js"></script>
+  <script src="../Genealogy/Js/genealogy.js"></script>
 </body>
 </html>
