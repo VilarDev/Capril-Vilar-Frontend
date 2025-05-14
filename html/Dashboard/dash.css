@@ -80,6 +80,9 @@ body {
   border-radius: 6px;
   font-weight: bold;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .btn-disabled {
@@ -140,15 +143,31 @@ body {
 
 .search-wrapper {
   display: flex;
-  gap: 0.5rem;
   align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
 }
 
-#search-input {
-  padding: 0.5rem 0.8rem;
-  border: 1px solid #ccc;
+.search-wrapper input {
+  height: 40px;
+  padding: 0 1rem;
   border-radius: 6px;
-  min-width: 250px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  min-width: 280px;
+}
+
+.search-wrapper button {
+  height: 40px;
+  width: 40px;
+  border-radius: 6px;
+  background-color: #1c4b82;
+  color: white;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
 
 .input-goat-search {
@@ -193,16 +212,17 @@ body {
 .goat-actions {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  min-width: 150px;
+  gap: 0.75rem;
+  justify-content: flex-start;
 }
 
 .goat-actions button {
-  padding: 0.6rem 1rem;
-  border: none;
-  border-radius: 6px;
-  font-weight: bold;
-  cursor: pointer;
+  min-width: 200px;
+  height: 40px;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* ========================= Genealogy Tree ========================= */
@@ -271,6 +291,8 @@ body {
   gap: 1rem;
   margin-bottom: 1rem;
   flex-wrap: wrap;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #ddd;
 }
 
 .event-filters select,
@@ -301,22 +323,11 @@ body {
   max-width: 180px;
 }
 
-/* ========================= Misc ========================= */
-.ver-todas {
-  display: inline-block;
-  margin-top: 1rem;
-  color: #1c4b82;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.content {
-  flex-grow: 1;
-  padding: 20px;
-  margin-left: 20px; /* <<< espaço entre a sidebar e o conteúdo principal */
-  overflow-x: auto;
-  box-sizing: border-box;
-  background-color: #f9fafe;
+#event-list td:last-child,
+#event-list th:last-child {
+  max-width: 400px;
+  white-space: normal;
+  word-break: break-word;
 }
 
 /* ========================= Add Event Form ========================= */
@@ -356,6 +367,40 @@ body {
 
 .event-form textarea {
   resize: vertical;
-  min-height: 100px;
-  max-height: 200px;
+  min-height: 120px;
+  max-height: 300px;
+}
+
+/* ========================= Misc ========================= */
+.ver-todas {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #1c4b82;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.content {
+  flex-grow: 1;
+  padding: 20px;
+  margin-left: 20px;
+  overflow-x: auto;
+  box-sizing: border-box;
+  background-color: #f9fafe;
+}
+
+/* Evita quebra e mantém tamanho consistente nas colunas pequenas */
+#event-list td:nth-child(1),  /* Data */
+#event-list td:nth-child(2),  /* Tipo */
+#event-list td:nth-child(4),  /* Local */
+#event-list td:nth-child(5),  /* Veterinário */
+#event-list th:nth-child(1),
+#event-list th:nth-child(2),
+#event-list th:nth-child(4),
+#event-list th:nth-child(5) {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 150px;
+  text-align: left;
 }
