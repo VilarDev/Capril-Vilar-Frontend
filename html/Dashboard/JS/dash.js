@@ -153,7 +153,7 @@ window.onload = () => {
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify({
-                    goatId: currentGoatRegistration, // ✅ Incluído corretamente
+                    goatId: currentGoatRegistration,
                     eventType,
                     date,
                     description,
@@ -172,5 +172,10 @@ window.onload = () => {
             console.error(err);
             alert("Erro ao cadastrar evento.");
         }
+    });
+
+    // ⚠️ MIGRATION NOTE: quando migrar para React, use React Router (navigate("/goats/new"))
+    document.querySelector(".btn-primary")?.addEventListener("click", () => {
+        window.location.href = "../Creat-Goat/newGoat.html";
     });
 };
