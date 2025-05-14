@@ -1,4 +1,3 @@
-// dash.js COMPLETO COM SUPORTE AO FORMULÁRIO DE ADICIONAR EVENTO
 let currentGoatRegistration = null;
 
 // Busca dados da cabra pelo número de registro digitado
@@ -150,8 +149,11 @@ window.onload = () => {
         try {
             const response = await fetch(`http://127.0.0.1:8080/goats/${currentGoatRegistration}/events`, {
                 method: "POST",
-                headers: { "Content-Type": "application/json" },
+                headers: {
+                    "Content-Type": "application/json"
+                },
                 body: JSON.stringify({
+                    goatId: currentGoatRegistration, // ✅ Incluído corretamente
                     eventType,
                     date,
                     description,
@@ -165,7 +167,7 @@ window.onload = () => {
 
             alert("Evento cadastrado com sucesso!");
             document.getElementById("event-form").reset();
-            toggleEvents(); // mostra a tabela atualizada
+            toggleEvents(); // atualiza a lista
         } catch (err) {
             console.error(err);
             alert("Erro ao cadastrar evento.");
