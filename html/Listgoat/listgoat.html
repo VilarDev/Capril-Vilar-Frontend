@@ -20,47 +20,35 @@
         </ul>
       </nav>
     </aside>
+
     <main class="content">
       <header class="topbar">
         <h1>Lista de Cabras</h1>
         <button class="btn-primary">Cadastrar nova cabra</button>
       </header>
 
-      <section class="goat-list">
+      <section class="goat-section">
         <div class="goat-header">
-          <h2>Cabras</h2>
-          <input type="text" placeholder="Buscar por nome" class="input-goat-search"/>
+  <h2>Cabras</h2>
+  <div class="search-container">
+    <input type="text" id="search-input" placeholder="Buscar por nome" class="input-goat-search" />
+    <button id="search-button" class="btn-search">🔍</button>
+  </div>
+</div>
+
+
+        <div class="goat-list" id="goat-list">
+          <!-- Os cards das cabras serão inseridos aqui dinamicamente pelo JS -->
         </div>
 
-        <div class="goat-card">
-          <div class="goat-info">
-            <h3>NAIDE DO CRS</h3>
-            <p>Registro: 2114517012</p>
-            <p>Raça: Boer</p>
-            <p>Data de Nasc: 01/01/2020</p>
-          </div>
-          <div class="goat-actions">
-            <button class="btn-secondary">Ver detalhes</button>
-            <button class="btn-warning">Editar</button>
-            <button class="btn-danger">Excluir</button>
-          </div>
-        </div>
-
-        <div class="goat-card">
-          <div class="goat-info">
-            <h3>BARUC</h3>
-            <p>Registro: 1643218012</p>
-            <p>Raça: Alpina</p>
-            <p>Data de Nasc: 27/06/2018</p>
-          </div>
-          <div class="goat-actions">
-            <button class="btn-secondary">Ver detalhes</button>
-            <button class="btn-warning">Editar</button>
-            <button class="btn-danger">Excluir</button>
-          </div>
+        <div style="text-align: center; margin-top: 2rem;">
+          <button id="ver-mais-btn" class="btn-primary">Ver mais</button>
         </div>
       </section>
     </main>
   </div>
+
+  <!-- JS responsável por carregar as cabras -->
+  <script src="./Js/listGoat.js"></script>
 </body>
 </html>

@@ -1,0 +1,125 @@
+/* ======= Layout Base ======= */
+.container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f4f8fc;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #172a45;
+  color: white;
+  padding: 2rem 1.5rem;
+}
+
+.sidebar h2 {
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+}
+
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar nav li {
+  margin: 1rem 0;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+.sidebar nav li.active,
+.sidebar nav li:hover {
+  background-color: #0f1e32;
+  font-weight: bold;
+}
+
+.content {
+  flex: 1;
+  padding: 2rem;
+  background-color: #f9fafe;
+}
+
+/* ======= Topbar ======= */
+.topbar {
+  margin-bottom: 2rem;
+}
+
+.topbar h1 {
+  color: #1c4b82;
+  font-size: 1.8rem;
+}
+
+/* ======= Formulário ======= */
+.form-section {
+  background-color: white;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  max-width: 600px;
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: 600;
+  color: #1c4b82;
+  margin-bottom: 0.4rem;
+}
+
+input {
+  padding: 0.5rem 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+/* ======= Grupo de Telefones ======= */
+.phone-group {
+  display: flex;
+  gap: 0.8rem;
+  margin-bottom: 0.6rem;
+}
+
+.phone-group input {
+  flex: 1;
+}
+
+/* ======= Botões ======= */
+button {
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: #1c4b82;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #163b66;
+}
+
+.btn-secondary {
+  background-color: white;
+  color: #1c4b82;
+  border: 2px solid #1c4b82;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #f0f4ff;
+}

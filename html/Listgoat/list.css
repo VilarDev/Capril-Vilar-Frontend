@@ -1,3 +1,4 @@
+/* ====================== Container e Layout ====================== */
 .container {
   display: flex;
   min-height: 100vh;
@@ -39,10 +40,13 @@
   padding: 2rem;
 }
 
+/* ====================== Topbar ====================== */
 .topbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
   margin-bottom: 2rem;
 }
 
@@ -54,66 +58,155 @@
   border-radius: 6px;
   font-weight: bold;
   cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
-.goat-list {
-  background-color: white;
-  border-radius: 10px;
-  padding: 1.5rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+.btn-primary:hover {
+  background-color: #163b66;
 }
 
+/* ====================== Cabeçalho da Lista ====================== */
 .goat-header {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
   margin-bottom: 1.5rem;
 }
 
+.goat-header h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #1c4b82;
+}
+
+/* ====================== Busca com botão ====================== */
+.search-container {
+  display: flex;
+  width: 100%;
+  max-width: 100%;
+  gap: 0.5rem;
+}
+
 .input-goat-search {
+  flex: 1;
   padding: 0.5rem 0.8rem;
   border: 1px solid #ccc;
   border-radius: 6px;
-  min-width: 300px;
+  font-size: 0.9rem;
+  box-sizing: border-box;
 }
 
+.btn-search {
+  padding: 0.5rem 0.9rem;
+  font-size: 1rem;
+  background-color: #1c4b82;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+.btn-search:hover {
+  background-color: #163b66;
+}
+
+/* ====================== Lista de Cabras ====================== */
+.goat-list {
+  background-color: white;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* ====================== Card de Cabra ====================== */
 .goat-card {
+  background-color: #fefefe;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  padding: 0.8rem;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid #eee;
-  padding: 1rem 0;
 }
 
-.goat-card:last-child {
-  border-bottom: none;
-}
-
+/* ====================== Informações da Cabra ====================== */
 .goat-info h3 {
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.3rem;
+  font-size: 1rem;
+  color: #1c4b82;
+}
+
+.goat-info p {
+  margin: 0.1rem 0;
+  font-size: 0.78rem;
+  line-height: 1.2;
+}
+
+/* ====================== Ações ====================== */
+.goat-actions {
+  margin-top: 0.6rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
 }
 
 .goat-actions button {
-  margin-left: 0.5rem;
-  padding: 0.5rem 1rem;
+  padding: 0.35rem 0.6rem;
+  font-size: 0.75rem;
   border-radius: 6px;
   border: none;
   font-weight: bold;
   cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
+/* Botões com estilo e hover */
 .btn-secondary {
   background-color: white;
   color: #1c4b82;
-  border: 2px solid #1c4b82;
+  border: 1.5px solid #1c4b82;
+}
+.btn-secondary:hover {
+  background-color: #e6eef8;
 }
 
 .btn-warning {
   background-color: #ffc107;
   color: #000;
 }
+.btn-warning:hover {
+  background-color: #e0a800;
+}
 
 .btn-danger {
   background-color: #dc3545;
   color: white;
+}
+.btn-danger:hover {
+  background-color: #b02a37;
+}
+
+/* ====================== Botão Ver Mais ====================== */
+#ver-mais-btn {
+  width: 100%;
+  padding: 0.7rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  background-color: #1c4b82;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+#ver-mais-btn:hover {
+  background-color: #163b66;
 }
