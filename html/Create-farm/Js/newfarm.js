@@ -1,75 +1,70 @@
-// Adiciona um novo campo de telefone no formulário
-function adicionarTelefone() {
-  const container = document.getElementById("phones-container");
+// Adiciona dinamicamente um novo campo de ID de telefone
+function addPhoneIdField() {
+    const container = document.getElementById("phones-container");
 
-  const grupo = document.createElement("div");
-  grupo.className = "phone-group";
+    const group = document.createElement("div");
+    group.className = "phone-group";
 
-  grupo.innerHTML = `
-    <input type="text" name="ddd" placeholder="DDD" maxlength="3" required />
-    <input type="text" name="numero" placeholder="Número" required />
-    <button type="button" class="btn-secondary btn-remove">Remover</button>
-  `;
+    group.innerHTML = `
+        <input type="number" name="phoneId" placeholder="ID do Telefone" required />
+        <button type="button" class="btn-secondary btn-remove">Remover</button>
+    `;
 
-  // Botão de remover telefone
-  grupo.querySelector(".btn-remove").addEventListener("click", () => {
-    container.removeChild(grupo);
-  });
-
-  container.appendChild(grupo);
-}
-
-// Envia os dados da fazenda para o backend
-async function cadastrarFazenda(event) {
-  event.preventDefault();
-
-  const name = document.getElementById("name").value;
-  const tod = document.getElementById("tod").value;
-  const ownerId = document.getElementById("ownerId").value;
-  const addressId = document.getElementById("addressId").value;
-
-  const phones = [];
-  document.querySelectorAll("#phones-container .phone-group").forEach(group => {
-    const ddd = group.querySelector('input[name="ddd"]').value.trim();
-    const numero = group.querySelector('input[name="numero"]').value.trim();
-    if (ddd && numero) {
-      phones.push({ ddd, numero });
-    }
-  });
-
-  const data = { name, tod, ownerId, addressId, phones };
-
-  try {
-    const response = await fetch("http://127.0.0.1:8080/goatfarms", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data)
+    // Botão de remover
+    group.querySelector(".btn-remove").addEventListener("click", () => {
+        container.removeChild(group);
     });
 
-    if (!response.ok) {
-      const erro = await response.text();
-      throw new Error("Erro ao cadastrar fazenda: " + erro);
-    }
-
-    alert("Fazenda cadastrada com sucesso!");
-    document.getElementById("form-fazenda").reset();
-    document.getElementById("phones-container").innerHTML = "";
-
-    // Reinsere dois campos de telefone após reset
-    adicionarTelefone();
-    adicionarTelefone();
-  } catch (error) {
-    console.error(error);
-    alert("Falha ao cadastrar fazenda.");
-  }
+    container.appendChild(group);
 }
 
-// Inicialização dos eventos
-window.onload = () => {
-  document.getElementById("add-phone-btn")?.addEventListener("click", adicionarTelefone);
-  document.getElementById("form-fazenda")?.addEventListener("submit", cadastrarFazenda);
+// Envia os dados para o backend
+async function cadastrarFazenda(event) {
+    event.preventDefault();
 
-  // Adiciona dois campos de telefone por padrão
-  adicionarTelefone();
-  adicionarTelefone();
+    const name = document.getElementById("name").value.trim();
+    const tod = document.getElementById("tod").value.trim();
+    const ownerId = parseInt(document.getElementById("ownerId").value);
+    const addressId = parseInt(document.getElementById("addressId").value);
+
+    const payload = {
+        name,
+        tod,
+        ownerId,
+        addressId
+    };
+
+    console.log("Payload sendo enviado:", payload); // Para verificar os dados antes do envio
+
+    try {
+        const response = await fetch("http://127.0.0.1:8080/goatfarms", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload)
+        });
+
+        if (!response.ok) {
+            const erro = await response.text();
+            throw new Error("Erro ao cadastrar fazenda: " + erro);
+        }
+
+        alert("Fazenda cadastrada com sucesso!");
+        document.getElementById("farm-form").reset();
+        const phonesContainer = document.getElementById("phones-container");
+        if (phonesContainer) {
+            phonesContainer.innerHTML = ""; // limpa campos de telefone, se existirem
+        }
+    } catch (error) {
+        console.error("Erro ao cadastrar fazenda:", error);
+        alert("Falha ao cadastrar fazenda.");
+    }
+}
+
+// Inicializa os eventos
+window.onload = () => {
+    const addPhoneBtn = document.getElementById("add-phone-btn");
+    if (addPhoneBtn) {
+        addPhoneBtn.addEventListener("click", addPhoneIdField);
+    }
+    document.getElementById("farm-form").addEventListener("submit", cadastrarFazenda);
 };

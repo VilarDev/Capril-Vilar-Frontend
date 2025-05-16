@@ -1,4 +1,4 @@
-/* ======= Layout Base ======= */
+/* ======= Layout Geral ======= */
 .container {
   display: flex;
   min-height: 100vh;
@@ -52,12 +52,12 @@
   font-size: 1.8rem;
 }
 
-/* ======= Formulário ======= */
+/* ======= Seção de Formulário ======= */
 .form-section {
   background-color: white;
   border-radius: 10px;
   padding: 2rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
   max-width: 600px;
 }
 
@@ -81,17 +81,6 @@ input {
   box-sizing: border-box;
 }
 
-/* ======= Grupo de Telefones ======= */
-.phone-group {
-  display: flex;
-  gap: 0.8rem;
-  margin-bottom: 0.6rem;
-}
-
-.phone-group input {
-  flex: 1;
-}
-
 /* ======= Botões ======= */
 button {
   font-weight: bold;
@@ -109,17 +98,4 @@ button {
 
 .btn-primary:hover {
   background-color: #163b66;
-}
-
-.btn-secondary {
-  background-color: white;
-  color: #1c4b82;
-  border: 2px solid #1c4b82;
-  padding: 0.5rem 1rem;
-  margin-top: 1rem;
-  transition: all 0.3s ease;
-}
-
-.btn-secondary:hover {
-  background-color: #f0f4ff;
 }

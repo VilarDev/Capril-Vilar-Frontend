@@ -1,68 +1,62 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cadastrar Fazenda - Capril Vilar</title>
-  <link rel="stylesheet" href="../../css/global.css" />
-  <link rel="stylesheet" href="./newfarm.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastrar Fazenda - Capril Vilar</title>
+    <link rel="stylesheet" href="../../css/global.css" />
+    <link rel="stylesheet" href="./newfarm.css" />
 </head>
 <body>
-  <div class="container">
-    <aside class="sidebar">
-      <h2>🐐 Capril Vilar</h2>
-      <nav>
-        <ul>
-          <li>Dashboard</li>
-          <li>Cabras</li>
-          <li>Eventos</li>
-          <li class="active">Fazendas</li>
-          <li>Proprietários</li>
-        </ul>
-      </nav>
-    </aside>
+    <div class="container">
+        <aside class="sidebar">
+            <h2>🐐 Capril Vilar</h2>
+            <nav>
+                <ul>
+                    <li>Dashboard</li>
+                    <li>Cabras</li>
+                    <li>Eventos</li>
+                    <li class="active">Fazendas</li>
+                    <li>Proprietários</li>
+                </ul>
+            </nav>
+        </aside>
 
-    <main class="content">
-      <header class="topbar">
-        <h1>Cadastrar Nova Fazenda</h1>
-      </header>
+        <main class="content">
+            <header class="topbar">
+                <h1>Cadastrar Nova Fazenda</h1>
+            </header>
 
-      <section class="form-section">
-        <form id="form-fazenda">
-          <div class="form-group">
-            <label for="name">Nome da Fazenda:</label>
-            <input type="text" id="name" required />
-          </div>
+            <section class="form-section">
+                <form id="farm-form">
+                    <div class="form-group">
+                        <label for="name">Nome da Fazenda:</label>
+                        <input type="text" id="name" required />
+                    </div>
 
-          <div class="form-group">
-            <label for="tod">TOD:</label>
-            <input type="text" id="tod" required />
-          </div>
+                    <div class="form-group">
+                        <label for="tod">TOD:</label>
+                        <input type="text" id="tod" required />
+                    </div>
 
-          <div class="form-group">
-            <label for="ownerId">ID do Proprietário:</label>
-            <input type="number" id="ownerId" value="1" required />
-          </div>
+                    <div class="form-group">
+                        <label for="ownerId">ID do Proprietário:</label>
+                        <input type="number" id="ownerId" value="1" required />
+                    </div>
 
-          <div class="form-group">
-            <label for="addressId">ID do Endereço:</label>
-            <input type="number" id="addressId" value="1" required />
-          </div>
+                    <div class="form-group">
+                        <label for="addressId">ID do Endereço:</label>
+                        <input type="number" id="addressId" value="1" required />
+                    </div>
 
-          <div class="form-group">
-            <label>Telefones:</label>
-            <div id="phones-container"></div>
-            <button type="button" class="btn-secondary" id="add-phone-btn">+ Adicionar Telefone</button>
-          </div>
+                    <div style="margin-top: 1.5rem;">
+                        <button type="submit" class="btn-primary">Cadastrar Fazenda</button>
+                    </div>
+                </form>
+            </section>
+        </main>
+    </div>
 
-          <div style="margin-top: 1.5rem;">
-            <button type="submit" class="btn-primary">Cadastrar Fazenda</button>
-          </div>
-        </form>
-      </section>
-    </main>
-  </div>
-
-  <script src="./Js/newfarm.js"></script>
+    <script src="./Js/newfarm.js"></script>
 </body>
 </html>
