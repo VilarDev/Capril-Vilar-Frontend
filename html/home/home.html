@@ -3,32 +3,46 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Capril Vilar - Início</title>
+  <title>CapriGestor - Início</title>
   <link rel="stylesheet" href="../../css/global.css" />
   <link rel="stylesheet" href="./home.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
   <div class="container">
     <aside class="sidebar">
-      <h2>🐐 Capril Vilar</h2>
+      <h2><i class="fa-solid fa-goat"></i> CapriGestor</h2>
       <nav>
         <ul>
-          <li class="active">Dashboard</li>
-          <li><a href="./dashboard.html">Cabras</a></li>
-          <li><a href="#">Eventos</a></li>
-          <li><a href="#">Proprietários</a></li>
+          <li class="active"><i class="fa-solid fa-house"></i> Início</li>
+          <li><i class="fa-solid fa-magnifying-glass"></i> Buscar Capril</li>
+          <li><i class="fa-solid fa-users"></i> Ver Criadores</li>
+          <li><i class="fa-solid fa-tree"></i> Genealogia</li>
         </ul>
       </nav>
     </aside>
 
     <main class="content">
       <header class="topbar">
-        <h1>Bem-vindo ao Sistema Capril Vilar</h1>
+        <h1>Bem-vindo ao CapriGestor</h1>
+        <div class="button-group">
+          <button class="btn-primary"><i class="fa-solid fa-right-to-bracket"></i> Entrar</button>
+          <button class="btn-outline"><i class="fa-solid fa-user-plus"></i> Cadastrar meu capril</button>
+        </div>
       </header>
 
       <section class="home-section">
-        <p>Escolha uma das opções no menu lateral para começar.</p>
+        <p>Este é um sistema gratuito para gestão de genealogia, capris e eventos. Explore capris já cadastrados ou registre o seu!</p>
+
+        <div class="search-box">
+          <input type="text" placeholder="🔍 Buscar capril por nome..." />
+          <button><i class="fa-solid fa-search"></i></button>
+        </div>
       </section>
+
+      <footer class="footer">
+        <p>© 2025 CapriGestor. Todos os direitos reservados | Desenvolvido por Alberto Villar | Versão 1.0</p>
+      </footer>
     </main>
   </div>
 </body>
