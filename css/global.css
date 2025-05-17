@@ -14,7 +14,8 @@ body {
 /* Sidebar padrão */
 .sidebar {
   width: 250px;
-  background-color: #070A26;
+   background-color: #070A26;
+  background: linear-gradient(180deg, rgba(7, 10, 38, 1) 26%, rgba(50, 68, 173, 1) 100%);
   color: #ffffffff;
   padding: 2rem 1.5rem;
   box-sizing: border-box;

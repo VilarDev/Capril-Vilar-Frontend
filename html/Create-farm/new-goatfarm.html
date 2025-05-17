@@ -1,62 +1,126 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cadastrar Fazenda - Capril Vilar</title>
-    <link rel="stylesheet" href="../../css/global.css" />
-    <link rel="stylesheet" href="./newfarm.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadastrar Fazenda Completa - Capril Vilar</title>
+  <link rel="stylesheet" href="../../css/global.css" />
+  <link rel="stylesheet" href="./newfarm.css" />
 </head>
 <body>
-    <div class="container">
-        <aside class="sidebar">
-            <h2>🐐 Capril Vilar</h2>
-            <nav>
-                <ul>
-                    <li>Dashboard</li>
-                    <li>Cabras</li>
-                    <li>Eventos</li>
-                    <li class="active">Fazendas</li>
-                    <li>Proprietários</li>
-                </ul>
-            </nav>
-        </aside>
+  <div class="container">
+    <aside class="sidebar">
+      <h2>🐐 Capril Vilar</h2>
+      <nav>
+        <ul>
+          <li>Dashboard</li>
+          <li>Cabras</li>
+          <li>Eventos</li>
+          <li class="active">Fazendas</li>
+          <li>Proprietários</li>
+        </ul>
+      </nav>
+    </aside>
 
-        <main class="content">
-            <header class="topbar">
-                <h1>Cadastrar Nova Fazenda</h1>
-            </header>
+    <main class="content">
+      <header class="topbar">
+        <h1>Cadastro Completo de Fazenda</h1>
+      </header>
 
-            <section class="form-section">
-                <form id="farm-form">
-                    <div class="form-group">
-                        <label for="name">Nome da Fazenda:</label>
-                        <input type="text" id="name" required />
-                    </div>
+      <section class="form-section">
 
-                    <div class="form-group">
-                        <label for="tod">TOD:</label>
-                        <input type="text" id="tod" required />
-                    </div>
+        <!-- 🧾 Cadastro de Proprietário -->
+        <h2>1. Proprietário</h2>
+        <form id="owner-form">
+          <div class="form-group">
+            <label for="ownerName">Nome:</label>
+            <input type="text" id="ownerName" required />
+          </div>
+          <div class="form-group">
+            <label for="ownerCpf">CPF:</label>
+            <input type="text" id="ownerCpf" required />
+          </div>
+          <div class="form-group">
+            <label for="ownerEmail">Email:</label>
+            <input type="email" id="ownerEmail" required />
+          </div>
+          <button type="button" id="saveOwner" class="btn-primary">Salvar Proprietário</button>
+        </form>
 
-                    <div class="form-group">
-                        <label for="ownerId">ID do Proprietário:</label>
-                        <input type="number" id="ownerId" value="1" required />
-                    </div>
+        <hr>
 
-                    <div class="form-group">
-                        <label for="addressId">ID do Endereço:</label>
-                        <input type="number" id="addressId" value="1" required />
-                    </div>
+        <!-- 🏠 Cadastro de Endereço -->
+        <h2>2. Endereço</h2>
+        <form id="address-form">
+          <div class="form-group">
+            <label for="street">Rua:</label>
+            <input type="text" id="street" required />
+          </div>
+          <div class="form-group">
+            <label for="neighborhood">Bairro:</label>
+            <input type="text" id="neighborhood" required />
+          </div>
+          <div class="form-group">
+            <label for="city">Cidade:</label>
+            <input type="text" id="city" required />
+          </div>
+          <div class="form-group">
+            <label for="state">Estado:</label>
+            <input type="text" id="state" required />
+          </div>
+          <div class="form-group">
+            <label for="postalCode">CEP:</label>
+            <input type="text" id="postalCode" required />
+          </div>
+          <div class="form-group">
+            <label for="country">País:</label>
+            <input type="text" id="country" required />
+          </div>
+          <button type="button" id="saveAddress" class="btn-primary">Salvar Endereço</button>
+        </form>
 
-                    <div style="margin-top: 1.5rem;">
-                        <button type="submit" class="btn-primary">Cadastrar Fazenda</button>
-                    </div>
-                </form>
-            </section>
-        </main>
-    </div>
+        <hr>
 
-    <script src="./Js/newfarm.js"></script>
+        <!-- 🐐 Cadastro da Fazenda -->
+        <h2>3. Fazenda</h2>
+        <form id="farm-form">
+          <div class="form-group">
+            <label for="name">Nome da Fazenda:</label>
+            <input type="text" id="name" required />
+          </div>
+          <div class="form-group">
+            <label for="tod">TOD:</label>
+            <input type="text" id="tod" required />
+          </div>
+          <button type="submit" id="saveFarm" class="btn-primary">Cadastrar Fazenda</button>
+        </form>
+
+        <hr>
+
+        <!-- ☎️ Cadastro de Telefones -->
+        <h2>4. Telefones</h2>
+        <form id="phone-form">
+          <div class="form-group">
+            <label for="ddd">DDD:</label>
+            <input type="text" id="ddd" required />
+          </div>
+          <div class="form-group">
+            <label for="numero">Número:</label>
+            <input type="text" id="numero" required />
+          </div>
+          <button type="button" id="addPhone" class="btn-primary">Adicionar Telefone</button>
+        </form>
+
+        <ul id="phoneList" style="margin-top: 1rem;"></ul>
+
+        <button type="button" id="finalizarCadastro" class="btn-primary" style="display: none; margin-top: 1rem;">
+          Finalizar e limpar formulário
+        </button>
+
+      </section>
+    </main>
+  </div>
+
+  <script src="./Js/newfarm.js"></script>
 </body>
 </html>
