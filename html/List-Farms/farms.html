@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fazendas - Capril Vilar</title>
+  <link rel="stylesheet" href="../../css/global.css" />
+  <link rel="stylesheet" href="./listFarm.css" />
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <h2>🐐 Capril Vilar</h2>
+      <nav>
+        <ul>
+          <li><a href="../Home/home.html">Dashboard</a></li>
+          <li><a href="../Dashboard/dashboard.html">Cabras</a></li>
+          <li class="active">Fazendas</li>
+          <li>Eventos</li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="content">
+      <header class="topbar">
+        <h1>Lista de Fazendas</h1>
+      </header>
+
+      <section class="goat-section">
+        <div class="goat-header">
+          <h2>Fazendas</h2>
+          <div class="search-container">
+            <input type="text" id="searchFarmInput" placeholder="Buscar por nome" class="input-goat-search" />
+            <button id="searchFarmBtn" class="btn-search">🔍</button>
+          </div>
+        </div>
+
+        <div class="goat-list" id="farmList">
+          <!-- Cards de fazendas serão inseridos aqui via JS -->
+        </div>
+
+        <div style="text-align: center; margin-top: 2rem;">
+          <button id="ver-mais-btn" class="btn-primary">Ver mais</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="./Js/farms.js"></script>
+</body>
+</html>

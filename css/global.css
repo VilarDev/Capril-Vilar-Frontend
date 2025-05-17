@@ -3,7 +3,7 @@ body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f4f8fc;
-  color: #172a45;
+  color: #070A26;
 }
 
 .container {
@@ -14,8 +14,8 @@ body {
 /* Sidebar padrão */
 .sidebar {
   width: 250px;
-  background-color: #172a45;
-  color: white;
+  background-color: #070A26;
+  color: #ffffffff;
   padding: 2rem 1.5rem;
   box-sizing: border-box;
 }
@@ -23,7 +23,7 @@ body {
 .sidebar h2 {
   font-size: 1.5rem;
   margin-bottom: 2rem;
-  color: white;
+  color: #ffffffff;
 }
 
 .sidebar nav ul {
@@ -39,7 +39,7 @@ body {
 .sidebar nav ul li a,
 .sidebar nav ul li {
   display: block;
-  color: #bbb;
+  color: #ffffffff;
   text-decoration: none;
   padding: 0.5rem 1rem;
   border-radius: 6px;
@@ -63,7 +63,7 @@ body {
 
 /* Botões principais */
 .btn-primary {
-  background-color: #1c4b82;
+  background-color: #070A26;
   color: white;
   border: none;
   padding: 0.6rem 1.2rem;
